@@ -12,6 +12,7 @@ import static org.powermock.api.mockito.PowerMockito.mockStatic;
 public class Class2TestTest {
     @Test
     public void test() {
+        ClassWithStatic.field = mock(ClassWithStatic.InnerClass.class);
         mockStatic(ClassWithStatic.class);
         when(ClassWithStatic.someString()).thenReturn("asdf");
         Assert.assertEquals("asdf!", new Class2Test().evolveString());
